@@ -1,0 +1,16 @@
+.button-container {
+    flex: 1 1 auto;
+    text-align: center;
+    margin: 0px 20px;
+    border: var(--button-border);
+    font-size: var(--button-text-size);
+    height: 80px;
+    background-color: blue;
+    color: white;
+    border: none;
+    font-family: 'Comfortaa', cursive;
+  }
+  
+  .button-container:hover {
+    cursor: pointer;
+  }

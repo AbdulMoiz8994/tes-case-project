@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {TimerButton} from '../TimerButton/TimerButton'
-
+import './Timer.css'
 
 
 export const Timer = () => {
@@ -55,12 +55,14 @@ const Reset=() =>{
 
 
     return (
-        <div>
+        <div className="timer-container">
             <h1>Timer Application</h1>
-        <span>{hour < 10 ? `0${hour}`: hour}</span>
-        <span>{minute < 10 ? `0${minute}` : minute}</span>
+            <div className="time-display">
+        <span>{hour < 10 ? `0${hour}`: hour}:</span>
+        <span>{minute < 10 ? `0${minute}` : minute}:</span>
         <span>{second < 10 ? `0${second}` : second}</span>
-
+        </div>
+        <div className="timer-button-container">
         {/* Start button */}
          <TimerButton
          ButtonAction={Run}
@@ -76,6 +78,8 @@ const Reset=() =>{
             ButtonAction={Reset}
             ButtonValue={"Reset"}
           />
+</div>
+
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './TimerButton.css'
 
 export interface Props{
     ButtonAction: () => void,
@@ -8,8 +8,8 @@ export interface Props{
 
 export const TimerButton: React.FC<Props> = ({ButtonAction,ButtonValue}) => {
     return (
-        <div>
-            <button onClick={ButtonAction}>{ButtonValue}</button>
+        <div className="button-container" onClick={ButtonAction}>
+            <p>{ButtonValue}</p>
         </div>
     )
 }
