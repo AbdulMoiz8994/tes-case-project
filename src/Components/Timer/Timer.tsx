@@ -36,7 +36,12 @@ function Start(){
 }
 }
     // Stop button
-
+const Stop=() =>{
+    if(status !== 0){
+       setStatus(2)
+       clearInterval(intervals)
+    }
+} 
 
     //Reset button
 
@@ -48,6 +53,10 @@ function Start(){
          <TimerButton
          ButtonAction={Run}
          ButtonValue={"Start"}
+         />
+         <TimerButton
+         ButtonAction={Stop}
+         ButtonValue={"Stop"}
          />
         </div>
     )
