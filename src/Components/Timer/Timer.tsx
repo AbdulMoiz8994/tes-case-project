@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import {TimerButton} from '../TimerButton/TimerButton'
 
 
 
@@ -18,10 +18,22 @@ const Run=() =>{
       setStatus(1)
       setIntervals(
         setInterval(() =>{
-
+         Start()
         },1000)
       )
     }
+function Start(){
+   if(second === 60){
+       minute++
+       second=0
+   }
+   if(minute === 60){
+       hour++
+       minute=0
+   }
+   setSecond(++second)
+
+}
 }
     // Stop button
 
@@ -32,6 +44,11 @@ const Run=() =>{
     return (
         <div>
             <h1>Timer Application</h1>
+        <span>{second < 10 ? `0${second}` : second}</span>
+         <TimerButton
+         ButtonAction={Run}
+         ButtonValue={"Start"}
+         />
         </div>
     )
 }
