@@ -44,20 +44,38 @@ const Stop=() =>{
 } 
 
     //Reset button
+const Reset=() =>{
+    setSecond(0)
+    setMinute(0)
+    setHour(0)
+    setStatus(0)
+    clearInterval(intervals)
+}
+
 
 
     return (
         <div>
             <h1>Timer Application</h1>
+        <span>{hour < 10 ? `0${hour}`: hour}</span>
+        <span>{minute < 10 ? `0${minute}` : minute}</span>
         <span>{second < 10 ? `0${second}` : second}</span>
+
+        {/* Start button */}
          <TimerButton
          ButtonAction={Run}
          ButtonValue={"Start"}
          />
+         {/* Stop Button */}
          <TimerButton
          ButtonAction={Stop}
          ButtonValue={"Stop"}
          />
+        {/* Rest Button */}
+          <TimerButton
+            ButtonAction={Reset}
+            ButtonValue={"Reset"}
+          />
         </div>
     )
 }
