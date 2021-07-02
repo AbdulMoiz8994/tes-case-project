@@ -25,15 +25,18 @@ const Run=() =>{
 function Start(){
    if(second === 60){
        minute++
+       setMinute(minute)
        second=0
    }
-   if(minute === 60){
+    if(minute === 60){
        hour++
+       setHour(hour)
        minute=0
-   }
-   setSecond(++second)
-
+   }else{
+     setSecond(++second)
+    }
 }
+
 }
     // Stop button
 const Stop=() =>{
